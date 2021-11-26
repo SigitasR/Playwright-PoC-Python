@@ -10,3 +10,4 @@ class BarboraAgeModal:
 
     def click_over_20_button(self):
         self.page.locator(self.modal_body).locator(self.over_20_button).nth(0).click()
+        self.page.wait_for_selector(self.modal_body, state="detached")

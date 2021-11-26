@@ -26,6 +26,9 @@ class BarboraFrontPage:
     def click_login_link(self):
         self.page.locator(self.loginLink).nth(1).click()
 
+    def click_button_button(self):
+        self.page.locator(self.buyButton).click()
+
     def search_for(self, product: str):
         self.page.locator(self.searchInput).fill(product)
         self.page.locator(self.searchInput).press('Enter')

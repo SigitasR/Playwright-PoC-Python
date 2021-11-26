@@ -5,7 +5,7 @@ from page_objects.components.barbora_clear_cart_modal import BarboraClearCartMod
 
 
 class BarboraCartSidebar:
-    clear_confirm_modal: BarboraClearCartModal
+    confirm_modal: BarboraClearCartModal
 
     cart_sidebar = 'div.b-cart--scrollable-blocks-wrap--cart-content'
     clear_cart_button = 'div.b-cart--scrollable-blocks-wrap--cart-header button'
@@ -14,7 +14,7 @@ class BarboraCartSidebar:
 
     def __init__(self, page: Page):
         self.page = page
-        self.clear_confirm_modal = BarboraClearCartModal(self.page)
+        self.confirm_modal = BarboraClearCartModal(self.page)
 
     def check_first_item_in_cart(self, text: str):
         sidebar = self.page.wait_for_selector(self.cart_sidebar)
