@@ -1,3 +1,4 @@
+import allure
 from assertpy import assert_that
 from playwright.sync_api import Page
 
@@ -16,12 +17,15 @@ class BarboraCartSidebar:
         self.page = page
         self.confirm_modal = BarboraClearCartModal(self.page)
 
+    @allure.step('Check first item in cart to contain: {1}')
     def check_first_item_in_cart(self, text: str):
         sidebar = self.page.wait_for_selector(self.cart_sidebar)
         assert_that(sidebar.query_selector(self.cart_items).text_content().lower()).contains_ignoring_case(text)
 
+    @allure.step('Click buy button')
     def click_buy_button(self):
         self.page.locator(self.buy_button).click()
 
+    @allure.step('Click clear cart button')
     def click_clear_cart(self):
         self.page.locator(self.clear_cart_button).click()

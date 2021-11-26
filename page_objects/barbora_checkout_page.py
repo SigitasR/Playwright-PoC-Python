@@ -1,5 +1,6 @@
 from typing import List
 
+import allure
 from assertpy import assert_that
 from playwright.sync_api import Page
 
@@ -12,12 +13,15 @@ class BarboraCheckoutPage:
     def __init__(self, page: Page):
         self.page = page
 
+    @allure.step('Click Next button')
     def click_next_button(self):
         self.page.locator(self.checkoutNextButton).click()
 
+    @allure.step('Look for cart table')
     def look_for_cart_table(self):
         assert_that(self.page.wait_for_selector(self.checkoutCartTable).is_visible()).is_true()
 
+    @allure.step('Check delivery times table')
     def check_delivery_table(self):
         table_texts = self.get_delivery_time_table_texts()
         assert_that(any('€' in text for text in table_texts)).is_true()

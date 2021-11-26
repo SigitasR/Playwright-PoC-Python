@@ -1,3 +1,4 @@
+import allure
 from playwright.sync_api import Page
 
 from page_objects.components.barbora_age_modal import BarboraAgeModal
@@ -13,5 +14,6 @@ class BarboraProductPage:
         self.page = page
         self.age_modal = BarboraAgeModal(self.page)
 
+    @allure.step('Click add to cart button')
     def click_add_to_cart(self):
         self.page.locator(self.add_to_cart_button).click()

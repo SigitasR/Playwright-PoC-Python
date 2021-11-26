@@ -8,6 +8,7 @@ pytest-playwright = "*"
 pytest = "*"
 assertpy = "*"
 playwright = "~=1.17.0"
+allure-pytest = "*"
 
 [dev-packages]
 

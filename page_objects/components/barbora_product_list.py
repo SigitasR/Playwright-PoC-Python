@@ -1,3 +1,4 @@
+import allure
 from playwright.sync_api import Page
 
 
@@ -8,6 +9,7 @@ class BarboraProductList:
     def __init__(self, page: Page):
         self.page = page
 
-    def click_product(self, product_number = 0):
+    @allure.step('Click on product')
+    def click_product(self, product_number=0):
         wrapper = self.page.wait_for_selector(self.productListWrapper)
         wrapper.query_selector_all(self.productItems)[product_number].click()

@@ -1,5 +1,8 @@
+import datetime
 import os
+import time
 
+import allure
 import pytest
 from playwright.sync_api import Page
 from pytest import mark
@@ -34,6 +37,11 @@ class TestBarboraFlow:
         self.cart_sidebar.click_clear_cart()
         self.cart_sidebar.confirm_modal.click_confirm()
 
+        # file_name = f'videos/recording-{time.time()}.webp'
+        # page.video.save_as(file_name)
+        # page.close()
+        # allure.attach.file(file_name, 'fgh', allure.attachment_type.WEBM, 'webm')
+
     def test_barbora_full_flow(self):
         self.front.accept_all_cookies()
         self.front.click_login_link()
@@ -57,10 +65,9 @@ class TestBarboraFlow:
 
         self.cart_sidebar.check_first_item_in_cart('duona')
 
-        self.front.click_button_button()
+        self.front.click_buy_button()
         self.checkout.click_next_button()
 
         self.checkout.look_for_cart_table()
         self.checkout.click_next_button()
         self.checkout.check_delivery_table()
-
