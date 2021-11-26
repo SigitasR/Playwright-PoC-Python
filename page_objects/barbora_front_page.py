@@ -1,8 +1,8 @@
 import allure
 from playwright.sync_api import Page
 
-from page_objects.components.barbora_login_modal import BarboraLoginModal
 from page_objects.components.barbora_clear_cart_modal import BarboraClearCartModal
+from page_objects.components.barbora_login_modal import BarboraLoginModal
 
 
 class BarboraFrontPage:

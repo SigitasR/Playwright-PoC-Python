@@ -1,8 +1,8 @@
 import os
 
 import pytest
-from pytest import mark
 from playwright.sync_api import Page
+from pytest import mark
 
 from helpers.api_helper import Api
 from helpers.cookie_helper import Cookie
