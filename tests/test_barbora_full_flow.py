@@ -35,6 +35,13 @@ class TestBarboraFlow:
         self.cart_sidebar.confirm_modal.click_confirm()
 
     def test_barbora_full_flow(self):
+        """
+        Given: I'm logged in
+        When: I search for product
+        And: I add product to cart
+        And: I go to checkout
+        Then: I see delivery times
+        """
         self.front.accept_all_cookies()
         self.front.click_login_link()
         self.front.login_modal.fill_email(os.environ['EMAIL'])
