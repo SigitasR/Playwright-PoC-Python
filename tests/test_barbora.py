@@ -32,7 +32,7 @@ class TestBarbora:
         page.reload()
 
     def test_barbora(self):
-        search_term = 'sakiškių'
+        search_term = 'grimbergen'
         self.front.search_for(search_term)
         self.product_list.click_product()
         self.product_page.age_modal.click_over_20_button()

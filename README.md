@@ -5,9 +5,9 @@ Simple proof-of-concept script in Python to run on barbora.lt
 
 ### Setup:
 
-`pipenv shell` (to start the virtual env)
+`poetry install` (to install dependencies from pyproject.toml)
 
-`pipenv install` (to install dependencies from Pipfile)
+`poetry shell` (to start the virtual env)
 
 `playwright install` (to install Playwright browsers)
 

@@ -48,7 +48,7 @@ class TestBarboraFlow:
         self.front.login_modal.fill_password(os.environ['PASS'])
         self.front.login_modal.click_login_button()
 
-        self.front.search_for('fujimi')
+        self.front.search_for('aberlour')
         self.product_list.click_product()
         self.product_page.age_modal.click_over_20_button()
         self.product_page.click_add_to_cart()
